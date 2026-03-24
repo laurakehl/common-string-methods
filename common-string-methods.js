@@ -4,7 +4,7 @@ Practice Problem #1
 
 Activity 1: Searching Strings
 Write a program to:
-Check if the text "JavaScript" is in the string "Learning JavaScript is fun!" using includes.
+Check if the text "JavaScript" is in the string "Learning JavaScript is fun!" using includes. // I am using the code that is included both on Canvas and at the bottom of this page
 Find the position of the word "fun" in the string.
 
 Activity 2: Transforming Strings
@@ -69,35 +69,27 @@ Complete the following tasks and assign the results to the specified variables. 
 let inputString = "  Welcome to the Coding Bootcamp! Learn JavaScript today.  ";
 
 // 1. Searching
-let hasJavaScript; // Your code here
-let codingPosition; // Your code here
-let startsWithWelcome; // Your code here
-let endsWithToday; // Your code here
+console.log(inputString.includes("JavaScript")); //output: true
+console.log(inputString.indexOf("fun")); //output: -1 (not found)
+console.log(inputString.startsWith("Welcome")); //output: false, not trimmed 
+console.log(inputString.endsWith("today.")); //output: false, not trimmed 
 
 // 2. Transforming
-let lowercaseString; // Your code here
-let uppercaseString; // Your code here
-let trimmedString; // Your code here
-let replacedString; // Your code here
+let lowerCaseText = inputString.toLowerCase();
+console.log(lowerCaseText); //output:   welcome to the coding bootcamp! learn javascript today.
+let uppercaseString = inputString.toUpperCase();
+console.log(uppercaseString); //output:   WELCOME TO THE CODING BOOTCAMP! LEARN JAVASCRIPT TODAY.
+let trimmedString = inputString.trim(); 
+console.log(trimmedString); // output: Welcome to the Coding Bootcamp! Learn JavaScript today. (trimmed)
+
+let replacedString = inputString.replace("JavaScript", "Coding");
+console.log(replacedString);// output: Welcome to the Coding Bootcamp! Learn JavaScript today.
 
 // 3. Breaking Apart
-let wordsArray; // Your code here
+let wordsArray = inputString.split(" "); 
+console.log(wordsArray); // output: Welcome, to, the, Coding, Bootcamp!, Learn, JavaScript, today.
 
 // 4. Retrieving
-let firstCharacter; // Your code here
-let extractedBootcamp; // Your code here
-
-// Log all results
-console.log({
-  hasJavaScript,
-  codingPosition,
-  startsWithWelcome,
-  endsWithToday,
-  lowercaseString,
-  uppercaseString,
-  trimmedString,
-  replacedString,
-  wordsArray,
-  firstCharacter,
-  extractedBootcamp,
-});
+console.log(trimmedString.charAt(0)); // output: W
+let extractedBootcamp = (trimmedString.slice(22,30)); //output: Bootcamp
+console.log(extractedBootcamp); //output: Bootcamp
